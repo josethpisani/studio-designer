@@ -12,3 +12,7 @@ button, input, textarea, select { font:inherit; }
 @layer components { .card { @apply rounded-2xl border border-slate-200/80 bg-white shadow-soft; } .label { @apply mb-1.5 block text-xs font-semibold uppercase tracking-wider text-slate-500; } .field { @apply w-full rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm outline-none transition focus:border-slate-900 focus:ring-2 focus:ring-mint; } .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[.98]; } }
 .card { color:var(--ink); }
 aside .font-black { text-transform: uppercase; }
+.card { min-width: 0; overflow: hidden; }
+.card h1, .card h2, .card h3, .card p, .card span, .card a { overflow-wrap: anywhere; }
+.grid > * { min-width: 0; }
+textarea { resize: vertical; }
