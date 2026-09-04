@@ -1,0 +1,3 @@
+import { statusLabels,priorityLabels,Status,Priority } from "../lib/types";
+export function StatusBadge({status}:{status:Status}){return <span className={`rounded-full px-2.5 py-1 text-xs font-bold ${status==='completed'?'bg-mint text-emerald-800':status==='in_progress'?'bg-blue-100 text-blue-700':status==='review'?'bg-lavender text-violet-700':status==='cancelled'?'bg-slate-100 text-slate-500':'bg-amber-100 text-amber-700'}`}>{statusLabels[status]}</span>}
+export function PriorityBadge({priority}:{priority:Priority}){return <span className={`text-xs font-semibold ${priority==='urgent'?'text-coral':priority==='high'?'text-orange-500':'text-slate-500'}`}>{priorityLabels[priority]}</span>}

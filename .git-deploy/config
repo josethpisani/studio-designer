@@ -1,0 +1,14 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	worktree = C:/Users/joset/OneDrive/Documentos/joseth/Proyectos/Daniel herramientas
+	symlinks = false
+	ignorecase = true
+[user]
+	name = josethpisani
+	email = josethpisani@users.noreply.github.com
+[remote "origin"]
+	url = https://github.com/josethpisani/studio-designer.git
+	fetch = +refs/heads/*:refs/remotes/origin/*

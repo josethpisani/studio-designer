@@ -1,0 +1,1 @@
+import Link from "next/link"; import { ClientForm } from "../../../components/forms"; export default function New(){return <div className="min-h-screen p-5 sm:p-8"><Link href="/clientes" className="text-sm font-semibold text-slate-500">← Volver a clientes</Link><h1 className="mb-6 mt-6 text-3xl font-black">Nuevo cliente</h1><ClientForm/></div>}
