@@ -6,3 +6,6 @@ node_modules
 *.db
 .gh-config
 .git-deploy
+.vercel
+
+.vercel

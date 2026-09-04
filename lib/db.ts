@@ -11,6 +11,8 @@ export async function initDb() {
     `CREATE TABLE IF NOT EXISTS activity_updates (id INTEGER PRIMARY KEY AUTOINCREMENT, activity_id INTEGER NOT NULL REFERENCES activities(id) ON DELETE CASCADE, comment TEXT NOT NULL, status TEXT NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)`,
     `CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)`,
     `CREATE TABLE IF NOT EXISTS designers (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, email TEXT, role TEXT, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)`,
+    `CREATE TABLE IF NOT EXISTS activity_attachments (id INTEGER PRIMARY KEY AUTOINCREMENT, activity_id INTEGER NOT NULL REFERENCES activities(id) ON DELETE CASCADE, update_id INTEGER REFERENCES activity_updates(id) ON DELETE CASCADE, filename TEXT NOT NULL, mime_type TEXT NOT NULL, data TEXT NOT NULL, size INTEGER NOT NULL, created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)`,
+    `CREATE INDEX IF NOT EXISTS idx_attachments_activity ON activity_attachments(activity_id)`,
     `CREATE INDEX IF NOT EXISTS idx_activities_client ON activities(client_id)`, `CREATE INDEX IF NOT EXISTS idx_activities_due ON activities(due_date)`, `CREATE INDEX IF NOT EXISTS idx_updates_activity ON activity_updates(activity_id)`
   ], "write");
   try { await db.execute("ALTER TABLE activities ADD COLUMN assigned_to TEXT"); } catch { /* existing databases already migrated */ }
