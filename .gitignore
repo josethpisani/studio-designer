@@ -5,3 +5,4 @@ node_modules
 *.local
 *.db
 .gh-config
+.git-deploy
